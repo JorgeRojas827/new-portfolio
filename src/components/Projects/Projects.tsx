@@ -3,15 +3,24 @@ import { Project } from "./Project";
 import calculadora from "../../assets/calculator-dark.png";
 import todoApp from "../../assets/todo-app.png";
 import { ProjectUx } from "./ProjectUx";
+import { Logo } from "../Logo";
+import { fadeUp } from "../../helpers/Animations";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   return (
-    <div className="mt-72 flex flex-col justify-center">
-      <div className="flex space-x-3 pl-20">
-        <picture className="flex items-center">
-          <img src={Icosaedro} alt="Logo personal" className="w-16 mr-3" />
-          <h1 className="font-anton text-5xl">Projects</h1>
-        </picture>
+    <div id="projects" className="md:mt-72 mt-20 flex flex-col justify-center">
+      <div className="flex items-center space-x-3 md:pl-20 pl-5">
+        <Logo />
+        <motion.h1
+          variants={fadeUp}
+          whileInView="visible"
+          viewport={{ once: true }}
+          initial="hidden"
+          className="font-anton text-5xl"
+        >
+          Projects
+        </motion.h1>
       </div>
       <Project
         title="React-typescript-calculator"
